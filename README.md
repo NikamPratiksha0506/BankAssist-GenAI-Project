@@ -49,7 +49,7 @@ Example Query:
 
 **Code Example:**  
 
-![Task 2 Code](C:\Users\HP\Desktop\Task5.png)
+![Task 2 Code](task2_input.png)
 
 **Sample Output:**  
 
