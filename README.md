@@ -50,6 +50,7 @@ Example Query:
 **Code Example:**  
 
 ![Task 2 Code](task2_input.png)
+<img src="task2_input.png" alt="Task 2 Output" width="500"/>
 
 **Sample Output:**  
 
