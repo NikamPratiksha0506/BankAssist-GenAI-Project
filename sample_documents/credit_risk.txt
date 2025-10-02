@@ -1,0 +1,15 @@
+Credit Risk Analysis - Sample Document
+
+Loan Account: 987654321
+Customer: Jane Smith
+Loan Amount: 500,000
+Interest Rate: 8.5%
+Loan Tenure: 5 years
+
+Risk Assessment:
+- Payment History: Excellent
+- Outstanding Loans: None
+- Credit Score: 780
+
+Conclusion:
+The customer poses low credit risk. Recommended for loan approval.
