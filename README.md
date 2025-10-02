@@ -151,6 +151,12 @@ Transform data → Send notifications.
 
 Integrate with LangChain outputs via webhook.
 
+Workflow:
+<img src="task8workflow.png" alt="Task 8" width="800"/>
+
+Sample Output:
+<img src="task8output.png" alt="Task 8" width="800"/>
+
 
 
 Author
