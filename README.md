@@ -86,10 +86,10 @@ Example Query:
 “Show all customers with balance > ₹5L and more than 3 transactions this month.”
 
 Code Example:
-
+<img src="task5_code1.png" alt="Task 2 code" width="800"/>
 
 Sample Output:
-
+<img src="task5_output.png" alt="Task 2 code" width="800"/>
 
 🔹 Task 6: Document Summarization Engine
 
@@ -121,11 +121,6 @@ Generate concise outputs with Gemini LLM.
 
 Data Sources: Fund reports, earnings calls, compliance docs
 
-Code Example:
-
-
-Sample Output:
-
 
 🔹 Task 8: Workflow Automation with n8n
 
@@ -156,10 +151,6 @@ Transform data → Send notifications.
 
 Integrate with LangChain outputs via webhook.
 
-Code Example:
-
-
-Sample Output:
 
 
 Author
