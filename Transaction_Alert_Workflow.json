@@ -1,0 +1,88 @@
+{
+  "name": "High Value Transaction Alert",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "transaction-alert",
+        "options": {}
+      },
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        200,
+        300
+      ],
+      "webhookId": "transaction-alert",
+      "webhookDescription": "Trigger when a transaction event is received",
+      "webhookMethod": "POST"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{$json['transaction_value']}}",
+              "operation": "larger",
+              "value2": 5000000
+            }
+          ]
+        }
+      },
+      "name": "IF",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        480,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "fromEmail": "pratikshanikam0510@gmail.com",
+        "toEmail": "pratikshanikam0510@gmail.com",
+        "subject": "High Value Transaction Alert",
+        "text": "\u26a0\ufe0f Alert: A high-value transaction of \u20b9{{$json['transaction_value']}} was detected for {{$json['customer_name']}}.\nFraud Risk Score: {{$json['fraud_risk_score']}}"
+      },
+      "name": "Send Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 1,
+      "position": [
+        760,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "IF",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF": {
+      "main": [
+        [
+          {
+            "node": "Send Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "id": "HighValueTransactionAlert",
+  "tags": [
+    "bank",
+    "fraud detection",
+    "email alert"
+  ]
+}
