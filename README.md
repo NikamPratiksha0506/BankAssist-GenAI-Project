@@ -261,34 +261,54 @@ Generate concise outputs with Gemini LLM.
 Data Sources: Fund reports, earnings calls, compliance docs
 
 
-🔹 Task 8: Workflow Automation with n8n
+## 🔹 Task 8: Workflow Automation with n8n
 
-Objective: Automate workflows triggered by AI outputs from other modules.
+### 🎯 Objective
+Automate workflows that are triggered by outputs from AI or data modules — enabling instant alerts, notifications, or data logging based on specific conditions.
 
-Examples:
+---
 
-Alert RM via Slack if a transaction > ₹50L
+### 🧰 Tools & Technologies Used
+- **Platform:** [n8n.io](https://n8n.io)  
+- **Nodes Used:** Webhook, IF, Email (Gmail), HTTP  
+- **Integrations:** LangChain, SQL, Gmail, Google Sheets  
 
-Email compliance officer if fraud risk > threshold
+---
 
-Log chatbot queries into Google Sheets
+### ⚙️ Implementation Steps
+1. **Sign Up or Log In** at [n8n.cloud](https://n8n.cloud)  
+   You can also self-host using Docker or a local n8n setup.  
 
-Tools & Tech:
+2. **Create a Workflow:**
+   - Add a **Webhook Node**  
+     - Method: `POST`  
+     - Path: `transaction-alert`  
+     - Example URL:  
+       ```
+       https://bankassist.app.n8n.cloud/webhook-test/transaction-alert
+       ```
+   - Add an **IF Node**  
+     - Condition:  
+       - Left Value → `{{$json["transaction_value"]}}`  
+       - Operation → `larger`  
+       - Right Value → `5000000`
+   - Add an **Email Node (Gmail)**  
+     - Action: Send email  
+     - Recipient: `pratikshanikam0510@gmail.com`  
+     - Subject: `🚨 High-Value Transaction Alert`  
+     - Message:  
+       ```
+       Alert: Customer {{ $json["customer_name"] }} made a transaction of ₹{{ $json["transaction_value"] }}.
+       Fraud Risk Score: {{ $json["fraud_risk_score"] }}
+       Please review immediately.
+       ```
 
-n8n.io (cloud, Docker, or local)
+3. **Test Your Workflow Using cURL:**
+   ```bash
+   curl -X POST https://bankassist.app.n8n.cloud/webhook-test/transaction-alert \
+   -H "Content-Type: application/json" \
+   -d "{\"customer_name\":\"Amit Shah\",\"transaction_value\":6000000,\"fraud_risk_score\":0.87}"
 
-Nodes: Webhook, Slack, Gmail, HTTP
-
-Implementation Steps:
-
-Sign up at n8n.cloud
- or self-host.
-
-Define workflow triggers (e.g., SQL query results, summarization output).
-
-Transform data → Send notifications.
-
-Integrate with LangChain outputs via webhook.
 
 Workflow:
 <img src="task8workflow.png" alt="Task 8" width="800"/>
