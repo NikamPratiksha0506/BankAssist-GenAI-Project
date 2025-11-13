@@ -22,7 +22,7 @@ BankAssist has been strong in **core banking automation** but **lags behind in G
 The goal is to **upgrade the BankAssist IQ platform** with GenAI capabilities in **7 days**.
 
 ---
-### 🔹 Task 1: Banking Chatbot with Memory
+## 🔹 Task 1: Banking Chatbot with Memory
 
 This project is a simple banking assistant chatbot built using Google Gemini (via LangChain) and Gradio. It demonstrates how to combine LLMs, memory, and rule-based logic to answer customer queries with context.
 
@@ -82,7 +82,7 @@ Ensures the LLM has context from previous turns.
 
 
 
-### 🔹 Task 2: AI Agent with External Tool Access
+## 🔹 Task 2: AI Agent with External Tool Access
 
 **Objective:** Build an AI agent that can use **external tools** to answer queries like loan EMI, currency conversion, and weather info.
 
@@ -116,7 +116,7 @@ Example Query:
 <img src="task_output.png" alt="Task 2 code" width="800"/>
 
 
-### 🔹 Task 3 : SQL Q&A System (Banking Data)
+## 🔹 Task 3 : SQL Q&A System (Banking Data)
 This project enables Question Answering (Q&A) over documents (loan brochures, KYC policies, compliance manuals, etc.) using embeddings and FAISS as the vector database.
 
 How It Works
@@ -165,7 +165,7 @@ Retrieved chunks are passed to the LLM (Gemini / GPT) as context.
 
 The LLM generates a natural language answer, constrained to the retrieved information.
 
-### 🔹 Task 4: Banking chat bot with advanced memory
+## 🔹 Task 4: Banking chat bot with advanced memory
 
 This project demonstrates how to extend a Question-Answering (QA) system with memory and multi-turn dialogue using LangChain, Gemini Pro, and FAISS. It enables the AI to remember previous user interactions and compare or relate new questions to earlier ones — creating a more human-like, context-aware conversation experience.
 
@@ -196,7 +196,7 @@ Run Interactive QA
 Start a terminal session and query your document interactively.
 
 
-### 🔹 Task 5: SQL Q&A System (Banking Data)
+## 🔹 Task 5: SQL Q&A System (Banking Data)
 
 Objective: Enable natural language queries on structured customer and transaction data.
 
@@ -230,7 +230,8 @@ Code Example:
 Sample Output:
 <img src="task5_output.png" alt="Task 2 code" width="800"/>
 
-🔹 Task 6: Document Summarization Engine
+
+## 🔹 Task 6: Document Summarization Engine
 
 Objective: Summarize long banking and compliance documents efficiently.
 
@@ -310,10 +311,12 @@ Automate workflows that are triggered by outputs from AI or data modules — ena
    -d "{\"customer_name\":\"Amit Shah\",\"transaction_value\":6000000,\"fraud_risk_score\":0.87}"
 
 
-Workflow:
+Workflow:    
+
 <img src="task8workflow.png" alt="Task 8" width="800"/>
 
-Sample Output:
+Sample Output:      
+
 <img src="task8output.png" alt="Task 8" width="800"/>
 
 
